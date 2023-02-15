@@ -3,16 +3,6 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    private enum InputGetKey
-    {
-        QKey,
-        EKey,
-        LeftKey,
-        RightKey,
-        UpKey,
-        DownKey,
-    }
-
     //回転中かどうか
     private bool coroutineBool = false;
 
@@ -34,7 +24,7 @@ public class RotateObject : MonoBehaviour
             if (!coroutineBool)
             {
                 coroutineBool = true;
-                StartCoroutine(Rotate(InputGetKey.QKey));
+                StartCoroutine(Rotate(GameManager.InputGetKey.QKey));
             }
         }
 
@@ -43,7 +33,7 @@ public class RotateObject : MonoBehaviour
             if (!coroutineBool)
             {
                 coroutineBool = true;
-                StartCoroutine(Rotate(InputGetKey.EKey));
+                StartCoroutine(Rotate(GameManager.InputGetKey.EKey));
             }
         }
 
@@ -52,7 +42,7 @@ public class RotateObject : MonoBehaviour
             if (!coroutineBool)
             {
                 coroutineBool = true;
-                StartCoroutine(Rotate(InputGetKey.UpKey));
+                StartCoroutine(Rotate(GameManager.InputGetKey.UpKey));
             }
         }
 
@@ -61,7 +51,7 @@ public class RotateObject : MonoBehaviour
             if (!coroutineBool)
             {
                 coroutineBool = true;
-                StartCoroutine(Rotate(InputGetKey.DownKey));
+                StartCoroutine(Rotate(GameManager.InputGetKey.DownKey));
             }
         }
 
@@ -70,7 +60,7 @@ public class RotateObject : MonoBehaviour
             if (!coroutineBool)
             {
                 coroutineBool = true;
-                StartCoroutine(Rotate(InputGetKey.LeftKey));
+                StartCoroutine(Rotate(GameManager.InputGetKey.LeftKey));
             }
         }
 
@@ -79,11 +69,10 @@ public class RotateObject : MonoBehaviour
             if (!coroutineBool)
             {
                 coroutineBool = true;
-                StartCoroutine(Rotate(InputGetKey.RightKey));
+                StartCoroutine(Rotate(GameManager.InputGetKey.RightKey));
             }
         }
     }
-
 
     //回転を複数回行った際に、小数点以下でのずれが生じ、コースアウトしてしまうのを防ぐための四捨五入関数
     void Round_off()
@@ -104,28 +93,28 @@ public class RotateObject : MonoBehaviour
         transform.eulerAngles = new Vector3(x,y,z);
     }
 
-    IEnumerator Rotate(InputGetKey Key)
+    IEnumerator Rotate(GameManager.InputGetKey Key)
     {
         var DirectionRotation = Vector3.forward;
 
         switch(Key)
         {
-            case InputGetKey.QKey:
+            case GameManager.InputGetKey.QKey:
                 DirectionRotation = Vector3.up;
                 break;
-            case InputGetKey.EKey:
+            case GameManager.InputGetKey.EKey:
                 DirectionRotation = Vector3.down;
                 break;
-            case InputGetKey.UpKey:
+            case GameManager.InputGetKey.UpKey:
                 DirectionRotation = Vector3.right;
                 break;
-            case InputGetKey.DownKey:
+            case GameManager.InputGetKey.DownKey:
                 DirectionRotation = Vector3.left;
                 break;
-            case InputGetKey.LeftKey:
+            case GameManager.InputGetKey.LeftKey:
                 DirectionRotation = Vector3.forward;
                 break;
-            case InputGetKey.RightKey:
+            case GameManager.InputGetKey.RightKey:
                 DirectionRotation = Vector3.back;
                 break;
             default:
@@ -139,7 +128,9 @@ public class RotateObject : MonoBehaviour
             transform.RotateAround(transform.position, DirectionRotation, 1);
             yield return new WaitForSeconds(0.01f);
         }
+
         Round_off();
+
         coroutineBool = false;
     }
 }
