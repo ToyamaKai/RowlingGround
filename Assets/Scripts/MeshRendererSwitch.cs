@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class MeshRendererSwitch : MonoBehaviour
 {
-    MeshRenderer mesh;
-
-    private void Start()
+    private enum Direction
     {
-        mesh = GetComponent<MeshRenderer>();
+        Side,
+        Front,
     }
 
-    public IEnumerator Transparent()
+    [SerializeField] Direction m_direction;
+
+    public void ChangeDirection()
     {
-        for(int i = 0; i < 85; i++)
-        {
-            mesh.material.color = mesh.material.color - new Color32(0, 0, 0, 3);
-            yield return new WaitForSeconds(0.01f);
-        }
+        if(m_direction == Direction.Side) { m_direction = Direction.Front; }
+        if(m_direction == Direction.Front) { m_direction = Direction.Side; }
     }
 }
