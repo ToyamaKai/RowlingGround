@@ -100,22 +100,22 @@ public class PlayerRotation : MonoBehaviour
         switch (Key)
         {
             case GameManager.InputGetKey.QKey:
-                DirectionRotation = Vector3.down;
-                break;
-            case GameManager.InputGetKey.EKey:
                 DirectionRotation = Vector3.up;
                 break;
-            case GameManager.InputGetKey.UpKey:
-                DirectionRotation = Vector3.left;
+            case GameManager.InputGetKey.EKey:
+                DirectionRotation = Vector3.down;
                 break;
-            case GameManager.InputGetKey.DownKey:
+            case GameManager.InputGetKey.UpKey:
                 DirectionRotation = Vector3.right;
                 break;
+            case GameManager.InputGetKey.DownKey:
+                DirectionRotation = Vector3.left;
+                break;
             case GameManager.InputGetKey.LeftKey:
-                DirectionRotation = Vector3.back;
+                DirectionRotation = Vector3.forward;
                 break;
             case GameManager.InputGetKey.RightKey:
-                DirectionRotation = Vector3.forward;
+                DirectionRotation = Vector3.back;
                 break;
             default:
                 break;

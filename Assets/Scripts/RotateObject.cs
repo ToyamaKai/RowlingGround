@@ -6,6 +6,8 @@ public class RotateObject : MonoBehaviour
     //回転中かどうか
     private bool coroutineBool = false;
 
+    [SerializeField] MeshRendererSwitch m_meshRendererSwitch;
+
     void Update()
     {
         //PlayerScriptにて、GameManagerのcoroutineBoolを参照して回転中には移動できないようにするため、GameManagerのcoroutinBoolに書き込む
@@ -25,6 +27,7 @@ public class RotateObject : MonoBehaviour
             {
                 coroutineBool = true;
                 StartCoroutine(Rotate(GameManager.InputGetKey.QKey));
+                m_meshRendererSwitch.ChangeDirection();
             }
         }
 
@@ -34,6 +37,7 @@ public class RotateObject : MonoBehaviour
             {
                 coroutineBool = true;
                 StartCoroutine(Rotate(GameManager.InputGetKey.EKey));
+                m_meshRendererSwitch.ChangeDirection();
             }
         }
 
