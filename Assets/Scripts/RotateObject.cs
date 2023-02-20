@@ -6,7 +6,9 @@ public class RotateObject : MonoBehaviour
     //回転中かどうか
     private bool coroutineBool = false;
 
-    [SerializeField] MeshRendererSwitch m_meshRendererSwitch;
+    [SerializeField] MeshRendererSwitch m_sideMeshRendererSwitch;
+    [SerializeField] MeshRendererSwitch m_frontMeshRendererSwitch;
+
 
     void Update()
     {
@@ -27,7 +29,6 @@ public class RotateObject : MonoBehaviour
             {
                 coroutineBool = true;
                 StartCoroutine(Rotate(GameManager.InputGetKey.QKey));
-                m_meshRendererSwitch.ChangeDirection();
             }
         }
 
@@ -37,7 +38,6 @@ public class RotateObject : MonoBehaviour
             {
                 coroutineBool = true;
                 StartCoroutine(Rotate(GameManager.InputGetKey.EKey));
-                m_meshRendererSwitch.ChangeDirection();
             }
         }
 
@@ -136,5 +136,8 @@ public class RotateObject : MonoBehaviour
         Round_off();
 
         coroutineBool = false;
+
+        m_sideMeshRendererSwitch.ChangeDirection();
+        m_frontMeshRendererSwitch.ChangeDirection();
     }
 }

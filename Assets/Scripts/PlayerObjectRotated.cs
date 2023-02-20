@@ -1,14 +1,16 @@
-ï»¿using System.Collections;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRotation : MonoBehaviour
+public class PlayerObjectRotated : MonoBehaviour
 {
-    //å›è»¢ä¸­ã‹ã©ã†ã‹
+    //‰ñ“]’†‚©‚Ç‚¤‚©
     private bool coroutineBool = false;
+
 
     void Update()
     {
-        //PlayerScriptã«ã¦ã€GameManagerã®coroutineBoolã‚’å‚ç…§ã—ã¦å›è»¢ä¸­ã«ã¯ç§»å‹•ã§ããªã„ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã€GameManagerã®coroutinBoolã«æ›¸ãè¾¼ã‚€
+        //PlayerScript‚É‚ÄAGameManager‚ÌcoroutineBool‚ğQÆ‚µ‚Ä‰ñ“]’†‚É‚ÍˆÚ“®‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é‚½‚ßAGameManager‚ÌcoroutinBool‚É‘‚«‚Ş
         if (coroutineBool)
         {
             GameManager.coroutineBool = true;
@@ -18,7 +20,7 @@ public class PlayerRotation : MonoBehaviour
             GameManager.coroutineBool = false;
         }
 
-        //ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’å›è»¢ã•ã›ã‚‹ãŸã‚ã®ã‚­ãƒ¼å…¥åŠ›å—ä»˜&å‡¦ç†
+        //ƒXƒe[ƒW‚ğ‰ñ“]‚³‚¹‚é‚½‚ß‚ÌƒL[“ü—Íó•t&ˆ—
         if (Input.GetKeyDown("q"))
         {
             if (!coroutineBool)
@@ -74,18 +76,18 @@ public class PlayerRotation : MonoBehaviour
         }
     }
 
-
-    //å››æ¨äº”å…¥é–¢æ•°
-    private void Round_off()
+    //‰ñ“]‚ğ•¡”‰ñs‚Á‚½Û‚ÉA¬”“_ˆÈ‰º‚Å‚Ì‚¸‚ê‚ª¶‚¶AƒR[ƒXƒAƒEƒg‚µ‚Ä‚µ‚Ü‚¤‚Ì‚ğ–h‚®‚½‚ß‚ÌlÌŒÜ“üŠÖ”
+    void Round_off()
     {
-        // è‡ªèº«ã®rotationã‚’å–å¾—ã™ã‚‹
+        // ©g‚Ìrotation‚ğæ“¾‚·‚é
+
         float x = transform.eulerAngles.x;
         float y = transform.eulerAngles.y;
         float z = transform.eulerAngles.z;
 
         Quaternion rotation = transform.rotation;
 
-        // x, y, zãŒå°æ•°ç‚¹ä»¥ä¸‹ãŒã‚ã‚‹å ´åˆã«ã¯å››æ¨äº”å…¥ã™ã‚‹
+        // x, y, z‚ª¬”“_ˆÈ‰º‚ª‚ ‚éê‡‚É‚ÍlÌŒÜ“ü‚·‚é
         x = Mathf.Round(x);
         y = Mathf.Round(y);
         z = Mathf.Round(z);
@@ -100,22 +102,22 @@ public class PlayerRotation : MonoBehaviour
         switch (Key)
         {
             case GameManager.InputGetKey.QKey:
-                DirectionRotation = Vector3.down;
-                break;
-            case GameManager.InputGetKey.EKey:
                 DirectionRotation = Vector3.up;
                 break;
-            case GameManager.InputGetKey.UpKey:
-                DirectionRotation = Vector3.left;
+            case GameManager.InputGetKey.EKey:
+                DirectionRotation = Vector3.down;
                 break;
-            case GameManager.InputGetKey.DownKey:
+            case GameManager.InputGetKey.UpKey:
                 DirectionRotation = Vector3.right;
                 break;
+            case GameManager.InputGetKey.DownKey:
+                DirectionRotation = Vector3.left;
+                break;
             case GameManager.InputGetKey.LeftKey:
-                DirectionRotation = Vector3.back;
+                DirectionRotation = Vector3.forward;
                 break;
             case GameManager.InputGetKey.RightKey:
-                DirectionRotation = Vector3.forward;
+                DirectionRotation = Vector3.back;
                 break;
             default:
                 break;
