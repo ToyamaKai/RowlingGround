@@ -21,6 +21,7 @@ public class MeshRendererSwitch : MonoBehaviour
         m_walls = new GameObject[this.transform.childCount];
         m_wallsMaterial = new MeshRenderer[this.transform.childCount];
         GetChilderen();
+        SetMaterialAlpha();
     }
 
     private void Update()
