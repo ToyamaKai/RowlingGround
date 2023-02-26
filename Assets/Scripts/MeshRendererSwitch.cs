@@ -6,6 +6,7 @@ public class MeshRendererSwitch : MonoBehaviour
 {
     private enum Direction
     {
+        Floor,
         Side,
         Front,
     }
@@ -35,24 +36,65 @@ public class MeshRendererSwitch : MonoBehaviour
             m_wallsMaterial[i] = m_walls[i].GetComponent<MeshRenderer>();
         }
     }
-    public void ChangeDirection()
+    public void ChangeDirection(GameManager.InputGetKey Key)
     {
-        if(m_direction == Direction.Side)
+        if(Key == GameManager.InputGetKey.QKey || Key == GameManager.InputGetKey.EKey)
         {
-            m_direction = Direction.Front;
-            SetMaterialAlpha();
-            return;
+            if (m_direction == Direction.Side)
+            {
+                m_direction = Direction.Front;
+                SetMaterialAlpha();
+                return;
+            }
+            if (m_direction == Direction.Front)
+            {
+                m_direction = Direction.Side;
+                SetMaterialAlpha();
+                return;
+            }
         }
-        if(m_direction == Direction.Front)
+        else if(Key == GameManager.InputGetKey.UpKey || Key == GameManager.InputGetKey.DownKey)
         {
-            m_direction = Direction.Side;
-            SetMaterialAlpha();
-            return;
+            if (m_direction == Direction.Front)
+            {
+                m_direction = Direction.Floor;
+                SetMaterialAlpha();
+                return;
+            }
+            if (m_direction == Direction.Floor)
+            {
+                m_direction = Direction.Front;
+                SetMaterialAlpha();
+                return;
+            }
+        }
+        else if (Key == GameManager.InputGetKey.LeftKey || Key == GameManager.InputGetKey.RightKey)
+        {
+            if (m_direction == Direction.Side)
+            {
+                m_direction = Direction.Floor;
+                SetMaterialAlpha();
+                return;
+            }
+            if (m_direction == Direction.Floor)
+            {
+                m_direction = Direction.Side;
+                SetMaterialAlpha();
+                return;
+            }
         }
     }
 
     private void SetMaterialAlpha()
     {
+        if (m_direction == Direction.Floor)
+        {
+            for (int i = 0; i < this.transform.childCount; i++)
+            {
+                m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 1);
+            }
+            return;
+        }
         if (m_direction == Direction.Side)
         {
             for (int i = 0; i < this.transform.childCount; i++)

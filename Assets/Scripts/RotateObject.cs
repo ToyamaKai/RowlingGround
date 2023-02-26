@@ -6,8 +6,9 @@ public class RotateObject : MonoBehaviour
     //回転中かどうか
     private bool coroutineBool = false;
 
-    [SerializeField] MeshRendererSwitch m_sideMeshRendererSwitch;
+    [SerializeField] MeshRendererSwitch m_floorMeshRendererSwitch;
     [SerializeField] MeshRendererSwitch m_frontMeshRendererSwitch;
+    [SerializeField] MeshRendererSwitch m_sideMeshRendererSwitch;
 
 
     void Update()
@@ -137,7 +138,8 @@ public class RotateObject : MonoBehaviour
 
         coroutineBool = false;
 
-        m_sideMeshRendererSwitch.ChangeDirection();
-        m_frontMeshRendererSwitch.ChangeDirection();
+        m_sideMeshRendererSwitch.ChangeDirection(Key);
+        m_frontMeshRendererSwitch.ChangeDirection(Key);
+        m_floorMeshRendererSwitch.ChangeDirection(Key);
     }
 }
