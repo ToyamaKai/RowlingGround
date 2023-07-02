@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    //回転中かどうか
-    private bool coroutineBool = false;
 
     [SerializeField] MeshRendererSwitch m_floorMeshRendererSwitch;
     [SerializeField] MeshRendererSwitch m_frontMeshRendererSwitch;
@@ -13,69 +11,36 @@ public class RotateObject : MonoBehaviour
 
     void Update()
     {
-        //PlayerScriptにて、GameManagerのcoroutineBoolを参照して回転中には移動できないようにするため、GameManagerのcoroutinBoolに書き込む
-        if (coroutineBool)
-        {
-            GameManager.coroutineBool = true;
-        }
-        else
-        {
-            GameManager.coroutineBool = false;
-        }
 
         //ステージを回転させるためのキー入力受付&処理
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKey("q"))
         {
-            if (!coroutineBool)
-            {
-                coroutineBool = true;
-                StartCoroutine(Rotate(GameManager.InputGetKey.QKey));
-            }
+            Rotate(GameManager.InputGetKey.QKey);
         }
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKey("e"))
         {
-            if (!coroutineBool)
-            {
-                coroutineBool = true;
-                StartCoroutine(Rotate(GameManager.InputGetKey.EKey));
-            }
+            Rotate(GameManager.InputGetKey.EKey);
         }
 
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKey("up"))
         {
-            if (!coroutineBool)
-            {
-                coroutineBool = true;
-                StartCoroutine(Rotate(GameManager.InputGetKey.UpKey));
-            }
+            Rotate(GameManager.InputGetKey.UpKey);
         }
 
-        if (Input.GetKeyDown("down"))
+        if (Input.GetKey("down"))
         {
-            if (!coroutineBool)
-            {
-                coroutineBool = true;
-                StartCoroutine(Rotate(GameManager.InputGetKey.DownKey));
-            }
+            Rotate(GameManager.InputGetKey.DownKey);
         }
 
-        if (Input.GetKeyDown("left"))
+        if (Input.GetKey("left"))
         {
-            if (!coroutineBool)
-            {
-                coroutineBool = true;
-                StartCoroutine(Rotate(GameManager.InputGetKey.LeftKey));
-            }
+            Rotate(GameManager.InputGetKey.LeftKey);
         }
 
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKey("right"))
         {
-            if (!coroutineBool)
-            {
-                coroutineBool = true;
-                StartCoroutine(Rotate(GameManager.InputGetKey.RightKey));
-            }
+            Rotate(GameManager.InputGetKey.RightKey);
         }
     }
 
@@ -98,7 +63,7 @@ public class RotateObject : MonoBehaviour
         transform.eulerAngles = new Vector3(x,y,z);
     }
 
-    IEnumerator Rotate(GameManager.InputGetKey Key)
+    void Rotate(GameManager.InputGetKey Key)
     {
         var DirectionRotation = Vector3.forward;
 
@@ -126,17 +91,9 @@ public class RotateObject : MonoBehaviour
                 break;
         }
 
-        yield return new WaitForSeconds(0.6f);
-
-        for (int turn = 0; turn < 90; turn++)
-        {
-            transform.RotateAround(transform.position, DirectionRotation, 1);
-            yield return new WaitForSeconds(0.01f);
-        }
+        transform.RotateAround(transform.position, DirectionRotation, 1);
 
         Round_off();
-
-        coroutineBool = false;
 
         m_sideMeshRendererSwitch.ChangeDirection(Key);
         m_frontMeshRendererSwitch.ChangeDirection(Key);
