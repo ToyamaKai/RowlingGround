@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         DownKey,
     }
 
+    private static bool Goal = false;
     //‰ñ“]’†‚©‚Ç‚¤‚©‚ğ”»’f‚·‚écoroutineBoolBRotateObject‚©‚ç‰ñ“]‚µ‚Ä‚é‚©‚Ç‚¤‚©‚ğ‘‚«‚İAPlayerScript‚Í‚»‚Ìó‹µ‚ğŠm”F‚µ‚ÄˆÚ“®‚Å‚«‚é‚©‚Ç‚¤‚©‚ğ”»’f‚·‚éB
     public static bool coroutineBool = false;
 
@@ -25,5 +26,13 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    // Update is called once per frame
+    public bool GetGoal()
+    {
+        return Goal;
+    }
+
+    public void SetGoal(bool IsGoal)
+    {
+        Goal = IsGoal;
+    }
 }
