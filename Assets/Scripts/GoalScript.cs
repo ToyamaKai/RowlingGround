@@ -5,17 +5,6 @@ using UnityEngine;
 public class GoalScript : MonoBehaviour
 {
     [SerializeField] private GameManager m_gameManager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
