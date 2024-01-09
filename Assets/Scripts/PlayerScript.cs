@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    private float speed = 100.0f; // 移動速度
+    private float speed = 10.0f; // 移動速度
     private Rigidbody rb; // Rigidbodyコンポーネント
 
     void Start()
@@ -21,11 +21,11 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A))
             {
-                rb.AddForce(-transform.right * speed);
+                rb.AddForce(-transform.forward * speed);
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                rb.AddForce(transform.right * speed);
+                rb.AddForce(transform.forward * speed);
             }
 
         }
