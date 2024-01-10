@@ -6,6 +6,10 @@ public class PlayerScript : MonoBehaviour
 {
     private float speed = 10.0f; // 移動速度
     private Rigidbody rb; // Rigidbodyコンポーネント
+    private bool isRunning;
+
+    [SerializeField]
+    Animator playerAnimator;
 
     void Start()
     {
@@ -21,13 +25,33 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A))
             {
+                Runing = true;
                 rb.AddForce(-transform.forward * speed);
             }
             else if (Input.GetKey(KeyCode.D))
             {
+                Runing = true;
                 rb.AddForce(transform.forward * speed);
             }
+            else
+            {
+                Runing = false;
+            }
 
+        }
+    }
+
+    //アニメーション類
+    bool Runing
+    {
+        get { return isRunning; }
+        set
+        {
+            if(value != isRunning)
+            {
+                isRunning = value;
+                playerAnimator.SetBool("Running", isRunning);
+            }
         }
     }
 }
