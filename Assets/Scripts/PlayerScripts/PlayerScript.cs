@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    private float speed = 10.0f; // 移動速度
+    private float speed = 7.0f; // 移動速度
     private Rigidbody rb; // Rigidbodyコンポーネント
     private bool isRunning;
+    private bool isRight;//右向きかどうか
+
+    Vector3 localAngle;
 
     [SerializeField]
     Animator playerAnimator;
@@ -16,6 +19,7 @@ public class PlayerScript : MonoBehaviour
         // Rigidbodyコンポーネントをキャッシュする
         rb = GetComponent<Rigidbody>();
         transform.Rotate(0,0,0);
+        isRight = true;
     }
 
     void Update()
@@ -25,11 +29,25 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A))
             {
+                if(isRight)
+                {
+                    localAngle = this.transform.localEulerAngles;
+                    localAngle.y += 180;
+                    this.transform.localEulerAngles = localAngle;
+                    isRight = false;
+                }
                 Runing = true;
-                rb.AddForce(-transform.forward * speed);
+                rb.AddForce(transform.forward * speed);
             }
             else if (Input.GetKey(KeyCode.D))
             {
+                if (!isRight)
+                {
+                    localAngle = this.transform.localEulerAngles;
+                    localAngle.y += 180;
+                    this.transform.localEulerAngles = localAngle;
+                    isRight = true;
+                }
                 Runing = true;
                 rb.AddForce(transform.forward * speed);
             }
