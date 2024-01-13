@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     private bool isRunning;
     private bool isRight;//‰EŒü‚«‚©‚Ç‚¤‚©
 
-    Vector3 localAngle;
+    Vector3 worldAngle;
 
     [SerializeField]
     Animator playerAnimator;
@@ -31,9 +31,9 @@ public class PlayerScript : MonoBehaviour
             {
                 if(isRight)
                 {
-                    localAngle = this.transform.localEulerAngles;
-                    localAngle.y += 180;
-                    this.transform.localEulerAngles = localAngle;
+                    worldAngle = this.transform.eulerAngles;
+                    worldAngle.y += 180;
+                    this.transform.eulerAngles = worldAngle;
                     isRight = false;
                 }
                 Runing = true;
@@ -43,9 +43,9 @@ public class PlayerScript : MonoBehaviour
             {
                 if (!isRight)
                 {
-                    localAngle = this.transform.localEulerAngles;
-                    localAngle.y += 180;
-                    this.transform.localEulerAngles = localAngle;
+                    worldAngle = this.transform.eulerAngles;
+                    worldAngle.y += 180;
+                    this.transform.eulerAngles = worldAngle;
                     isRight = true;
                 }
                 Runing = true;

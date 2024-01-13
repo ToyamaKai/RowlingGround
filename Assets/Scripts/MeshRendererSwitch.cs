@@ -91,7 +91,10 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 1);
+                if (m_walls[i].transform.position.z < m_player.transform.position.z)
+                {
+                    m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 1);
+                }
             }
             return;
         }
@@ -99,7 +102,10 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 1);
+                if (m_walls[i].transform.position.z < m_player.transform.position.z)
+                {
+                    m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 1);
+                }
             }
             return;
         }
