@@ -11,11 +11,22 @@ public class LiftStarting : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (!m_liftIsStart)
+            if (!m_liftIsStart && !m_riseLiftObject.GetIsMoving())
             {
                 m_liftIsStart = true;
                 StartCoroutine(m_riseLiftObject.RiseLift());
                 
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (m_liftIsStart && !m_riseLiftObject.GetIsMoving())
+            {
+                m_liftIsStart = false;
             }
         }
     }

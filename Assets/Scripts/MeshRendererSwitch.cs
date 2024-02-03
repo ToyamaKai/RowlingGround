@@ -14,8 +14,11 @@ public class MeshRendererSwitch : MonoBehaviour
     private GameObject[] m_walls;
     private MeshRenderer[] m_wallsMaterial;
 
-    [SerializeField] Direction m_direction;
-    [SerializeField] GameObject m_player;
+    [SerializeField]
+    Direction m_direction; //このスクリプトがアタッチされているオブジェクトがFront,Side,Floorのどれかを確認
+    
+    [SerializeField]
+    GameObject m_player;
 
     private void Start()
     {
@@ -28,6 +31,8 @@ public class MeshRendererSwitch : MonoBehaviour
     private void Update()
     {
     }
+
+    //子オブジェクトのメッシュレンダラーを取得
     private void GetChilderen()
     {m_walls = new GameObject[this.transform.childCount];
         for(int i = 0; i < this.transform.childCount; i++)
@@ -36,6 +41,8 @@ public class MeshRendererSwitch : MonoBehaviour
             m_wallsMaterial[i] = m_walls[i].GetComponent<MeshRenderer>();
         }
     }
+
+    //回転し終わった後に壁がどこにあるかの情報を書き換え
     public void ChangeDirection(GameManager.InputGetKey Key)
     {
         if(Key == GameManager.InputGetKey.QKey || Key == GameManager.InputGetKey.EKey)
@@ -91,7 +98,7 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 1);
+                m_wallsMaterial[i].enabled = true;
             }
             return;
         }
@@ -99,7 +106,7 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 1);
+                m_wallsMaterial[i].enabled = true;
             }
             return;
         }
@@ -107,9 +114,9 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                if (m_walls[i].transform.position.z < m_player.transform.position.z)
+                if (m_walls[i].transform.position.z <= m_player.transform.position.z)
                 {
-                    m_wallsMaterial[i].material.color = new Color(m_wallsMaterial[i].material.color.r, m_wallsMaterial[i].material.color.g, m_wallsMaterial[i].material.color.b, 0);
+                    m_wallsMaterial[i].enabled = false;
                 }
             }
             return;
