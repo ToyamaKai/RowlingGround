@@ -11,8 +11,8 @@ public class MeshRendererSwitch : MonoBehaviour
         Front,
     }
 
-    private GameObject[] m_walls;
-    private MeshRenderer[] m_wallsMaterial;
+    private GameObject[]    m_walls;
+    private MeshRenderer[]  m_wallsMaterial;
 
     [SerializeField]
     Direction m_direction; //このスクリプトがアタッチされているオブジェクトがFront,Side,Floorのどれかを確認
@@ -34,7 +34,8 @@ public class MeshRendererSwitch : MonoBehaviour
 
     //子オブジェクトのメッシュレンダラーを取得
     private void GetChilderen()
-    {m_walls = new GameObject[this.transform.childCount];
+    {
+        m_walls = new GameObject[this.transform.childCount];
         for(int i = 0; i < this.transform.childCount; i++)
         {
             m_walls[i] = this.transform.GetChild(i).gameObject;
@@ -92,6 +93,7 @@ public class MeshRendererSwitch : MonoBehaviour
         }
     }
 
+    //MeshRendererのオンオフ切り替え
     private void SetMaterialAlpha()
     {
         if (m_direction == Direction.Floor)
@@ -114,9 +116,13 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                if (m_walls[i].transform.position.z <= m_player.transform.position.z)
+                if (m_walls[i].transform.position.z <= m_player.transform.position.z && m_walls[i].transform.position.y >= m_player.transform.position.y)
                 {
                     m_wallsMaterial[i].enabled = false;
+                }
+                else
+                {
+                    m_wallsMaterial[i].enabled = true;
                 }
             }
             return;
