@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         DownKey,
     }
 
-    private static bool         Goal = false;
+    private static bool         Goal;
     private static GameObject   m_player;
     
     public static bool coroutineBool = false;   //‰ñ“]’†‚©‚Ç‚¤‚©‚ğ”»’f‚·‚écoroutineBoolBRotateObject‚©‚ç‰ñ“]‚µ‚Ä‚é‚©‚Ç‚¤‚©‚ğ‘‚«‚İAPlayerScript‚Í‚»‚Ìó‹µ‚ğŠm”F‚µ‚ÄˆÚ“®‚Å‚«‚é‚©‚Ç‚¤‚©‚ğ”»’f‚·‚éB
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         m_goalPoint = 0;
+        Goal = false;
     }
 
     public bool GetGoal()

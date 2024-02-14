@@ -148,6 +148,7 @@ MonoBehaviour:
     m_StrikethroughOffset: 46
     m_StrikethroughThickness: 2.0571427
     m_TabWidth: 88
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_GlyphTable:
@@ -331,11 +332,16 @@ MonoBehaviour:
   m_GlyphTable: []
   m_CharacterTable: []
 >>>>>>> Stashed changes
+=======
+  m_GlyphTable: []
+  m_CharacterTable: []
+>>>>>>> BaseSystem/Timer
   m_AtlasTextures:
   - {fileID: 28981121099961358}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_UsedGlyphRects:
@@ -375,26 +381,14 @@ MonoBehaviour:
     m_Y: 686
     m_Width: 98
     m_Height: 98
+=======
+  m_UsedGlyphRects: []
+>>>>>>> BaseSystem/Timer
   m_FreeGlyphRects:
-  - m_X: 196
-    m_Y: 0
-    m_Width: 827
-    m_Height: 1023
-  - m_X: 98
-    m_Y: 130
-    m_Width: 925
-    m_Height: 36
-  - m_X: 98
-    m_Y: 296
-    m_Width: 925
-    m_Height: 727
-  - m_X: 165
-    m_Y: 130
-    m_Width: 858
-    m_Height: 893
   - m_X: 0
-    m_Y: 784
+    m_Y: 0
     m_Width: 1023
+<<<<<<< HEAD
     m_Height: 239
 =======
   m_UsedGlyphRects: []
@@ -412,6 +406,9 @@ MonoBehaviour:
     m_Width: 1023
     m_Height: 1023
 >>>>>>> Stashed changes
+=======
+    m_Height: 1023
+>>>>>>> BaseSystem/Timer
   m_fontInfo:
     Name: Electronic Highway Sign
     PointSize: 144
@@ -551,6 +548,7 @@ Texture2D:
   m_LightmapFormat: 0
   m_ColorSpace: 0
   m_PlatformBlob: 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   image data: 1048576
@@ -563,6 +561,10 @@ Texture2D:
   image data: 0
   _typelessdata: 
 >>>>>>> Stashed changes
+=======
+  image data: 0
+  _typelessdata: 
+>>>>>>> BaseSystem/Timer
   m_StreamData:
     serializedVersion: 2
     offset: 0
