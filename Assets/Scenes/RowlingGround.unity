@@ -2969,11 +2969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 2070125651}
   m_goalType: 0
-<<<<<<< HEAD
   m_text: {fileID: 1449771662}
-=======
   m_text: {fileID: 719968933}
->>>>>>> BaseSystem/Timer
 --- !u!1 &541644018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,8 +3949,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6631a3a1a07fe94888fa609321cb50e, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &663929859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4070,7 +4065,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 2070125651}
->>>>>>> BaseSystem/Timer
 --- !u!4 &677013799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7330587953529298839, guid: f6631a3a1a07fe94888fa609321cb50e, type: 3}
@@ -4133,8 +4127,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6631a3a1a07fe94888fa609321cb50e, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &691634648
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,7 +4207,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691634648}
   m_CullTransparentMesh: 1
->>>>>>> BaseSystem/Timer
 --- !u!4 &708233222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7330587953529298839, guid: f6631a3a1a07fe94888fa609321cb50e, type: 3}
@@ -4231,8 +4222,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7330587953529298839, guid: f6631a3a1a07fe94888fa609321cb50e, type: 3}
   m_PrefabInstance: {fileID: 1397936572}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &719968931
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,7 +4302,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719968931}
   m_CullTransparentMesh: 1
->>>>>>> BaseSystem/Timer
 --- !u!1 &750608465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,11 +5485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 2070125651}
   m_goalType: 1
-<<<<<<< HEAD
   m_text: {fileID: 1449771662}
-=======
   m_text: {fileID: 719968933}
->>>>>>> BaseSystem/Timer
 --- !u!65 &909692271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6878,10 +6863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27170713701731244b946f5054f66693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
   m_gameManager: {fileID: 2070125651}
->>>>>>> BaseSystem/Timer
 --- !u!114 &1181835140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6931,11 +6913,8 @@ Canvas:
   m_GameObject: {fileID: 1181835138}
   m_Enabled: 1
   serializedVersion: 3
-<<<<<<< HEAD
   m_RenderMode: 0
-=======
   m_RenderMode: 1
->>>>>>> BaseSystem/Timer
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -6963,11 +6942,8 @@ RectTransform:
   - {fileID: 1449771661}
   - {fileID: 304017579}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 7
-=======
   m_RootOrder: 8
->>>>>>> BaseSystem/Timer
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8127,11 +8103,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 5
-=======
   m_RootOrder: 6
->>>>>>> BaseSystem/Timer
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1299376043 stripped
 Transform:
@@ -11629,11 +11602,8 @@ Transform:
   m_Children:
   - {fileID: 237646538}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 6
-=======
   m_RootOrder: 7
->>>>>>> BaseSystem/Timer
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1845727717
 MonoBehaviour:
@@ -12416,11 +12386,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 8
-=======
   m_RootOrder: 9
->>>>>>> BaseSystem/Timer
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1940836502
 MonoBehaviour:
