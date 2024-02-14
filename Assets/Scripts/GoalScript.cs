@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 public class GoalScript : MonoBehaviour
 {
@@ -12,6 +13,13 @@ using UnityEngine.SceneManagement;
 
 public class GoalScript : MonoBehaviour
 {
+=======
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class GoalScript : MonoBehaviour
+{
+>>>>>>> Stashed changes
     private enum GoalType
     {
         Normal,
@@ -40,6 +48,9 @@ public class GoalScript : MonoBehaviour
 =======
                 m_text.gameObject.SetActive(true);
                 StartCoroutine("ReturnTitle");
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             }
         }
