@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuButtonManager : MonoBehaviour
 {
@@ -11,8 +12,15 @@ public class MenuButtonManager : MonoBehaviour
     [SerializeField]
     GameObject m_explanation;
 
+    [SerializeField]
+    Text GUIText;
+
+    [SerializeField]
+    GameObject m_GUI;
+
     private bool isMenu;
     private bool isReturnToTitle;
+    private bool isGUIOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +29,7 @@ public class MenuButtonManager : MonoBehaviour
         m_explanation.SetActive(false);
         isMenu = false;
         isReturnToTitle = false;
+        isGUIOn = true;
     }
 
     // Update is called once per frame
@@ -60,6 +69,22 @@ public class MenuButtonManager : MonoBehaviour
         {
             isReturnToTitle = true;
             SceneManager.LoadScene("TitleScene");
+        }
+    }
+
+    public void GUI()
+    {
+        if(isGUIOn)
+        {
+            m_GUI.SetActive(false);
+            isGUIOn = false;
+            GUIText.text = "GUI:ON";
+        }
+        else
+        {
+            m_GUI.SetActive(true);
+            isGUIOn = true;
+            GUIText.text = "GUI:OFF";
         }
     }
 
