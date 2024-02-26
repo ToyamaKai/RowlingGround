@@ -3279,7 +3279,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7103146c7360d044797f8dfc912d891d, type: 2}
+  - {fileID: 2100000, guid: 0c4af5d07df77e8479bcc1cee423a49d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5972,7 +5972,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7103146c7360d044797f8dfc912d891d, type: 2}
+  - {fileID: 2100000, guid: 0c4af5d07df77e8479bcc1cee423a49d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7088,6 +7088,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_direction: 2
   m_player: {fileID: 243161058}
+  m_hantoumei: {fileID: 2100000, guid: 20d3269fac3c9f8419527a1b045a88b5, type: 2}
+  m_motomoto: {fileID: 2100000, guid: 08e7c54899bda55409da2ac91d2f42fa, type: 2}
+  m_zentoumei: {fileID: 2100000, guid: 5d59818b9d168924db9c2aff0b7af2ad, type: 2}
 --- !u!1001 &1117247642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10209,6 +10212,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_direction: 0
   m_player: {fileID: 243161058}
+  m_hantoumei: {fileID: 2100000, guid: 20d3269fac3c9f8419527a1b045a88b5, type: 2}
+  m_motomoto: {fileID: 2100000, guid: 08e7c54899bda55409da2ac91d2f42fa, type: 2}
+  m_zentoumei: {fileID: 2100000, guid: 5d59818b9d168924db9c2aff0b7af2ad, type: 2}
 --- !u!1001 &1469453323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14754,6 +14760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_direction: 1
   m_player: {fileID: 243161058}
+  m_hantoumei: {fileID: 2100000, guid: 20d3269fac3c9f8419527a1b045a88b5, type: 2}
+  m_motomoto: {fileID: 2100000, guid: 08e7c54899bda55409da2ac91d2f42fa, type: 2}
+  m_zentoumei: {fileID: 2100000, guid: 5d59818b9d168924db9c2aff0b7af2ad, type: 2}
 --- !u!4 &2113207978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7330587953529298839, guid: f6631a3a1a07fe94888fa609321cb50e, type: 3}
@@ -14833,6 +14842,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1464845431}
     m_Modifications:
+    - target: {fileID: 4586332788174223799, guid: e3b737e10c7a67d48bc5dc0fc1ce1902, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4586332788174223800, guid: e3b737e10c7a67d48bc5dc0fc1ce1902, type: 3}
       propertyPath: m_Name
       value: Field

@@ -20,6 +20,15 @@ public class MeshRendererSwitch : MonoBehaviour
     [SerializeField]
     GameObject m_player;
 
+    [SerializeField]
+    Material m_hantoumei;
+
+    [SerializeField]
+    Material m_motomoto;
+
+    [SerializeField]
+    Material m_zentoumei;
+
     private void Start()
     {
         m_walls = new GameObject[this.transform.childCount];
@@ -100,7 +109,21 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                m_wallsMaterial[i].enabled = true;
+                if (m_walls[i].transform.position.z <= m_player.transform.position.z && m_walls[i].transform.position.y >= m_player.transform.position.y)
+                {
+                    if(m_walls[i].transform.position.z >= m_player.transform.position.z - 1)
+                    {
+                        m_wallsMaterial[i].material = m_zentoumei;
+                    }
+                    else
+                    {
+                        m_wallsMaterial[i].material = m_hantoumei;
+                    }
+                }
+                else
+                {
+                    m_wallsMaterial[i].material = m_motomoto;
+                }
             }
             return;
         }
@@ -108,7 +131,21 @@ public class MeshRendererSwitch : MonoBehaviour
         {
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                m_wallsMaterial[i].enabled = true;
+                if (m_walls[i].transform.position.z <= m_player.transform.position.z && m_walls[i].transform.position.y >= m_player.transform.position.y)
+                {
+                    if (m_walls[i].transform.position.z >= m_player.transform.position.z - 1)
+                    {
+                        m_wallsMaterial[i].material = m_zentoumei;
+                    }
+                    else
+                    {
+                        m_wallsMaterial[i].material = m_hantoumei;
+                    }
+                }
+                else
+                {
+                    m_wallsMaterial[i].material = m_motomoto;
+                }
             }
             return;
         }
@@ -118,11 +155,18 @@ public class MeshRendererSwitch : MonoBehaviour
             {
                 if (m_walls[i].transform.position.z <= m_player.transform.position.z && m_walls[i].transform.position.y >= m_player.transform.position.y)
                 {
-                    m_wallsMaterial[i].enabled = false;
+                    if (m_walls[i].transform.position.z >= m_player.transform.position.z - 1)
+                    {
+                        m_wallsMaterial[i].material = m_zentoumei;
+                    }
+                    else
+                    {
+                        m_wallsMaterial[i].material = m_hantoumei;
+                    }
                 }
                 else
                 {
-                    m_wallsMaterial[i].enabled = true;
+                    m_wallsMaterial[i].material = m_motomoto;
                 }
             }
             return;
